@@ -1,14 +1,9 @@
 # Day 08 – Cloud Server Setup: Docker, Nginx & Web Deployment
 
-## Instance Details
-- Cloud: AWS EC2 / Utho
-- OS: Ubuntu / CentOS
-- Public IP: <YOUR_PUBLIC_IP>
-
 ## Commands Used
 ### SSH
 - `ssh -i your-key.pem ubuntu@<IP>` (AWS)  
-  or `ssh root@<IP>` (Utho)
+  
 
 ### Update + Install
 - `sudo apt update && sudo apt upgrade -y`
@@ -22,15 +17,7 @@
 ### Logs
 - `sudo tail -n 50 /var/log/nginx/access.log`
 - `sudo tail -n 50 /var/log/nginx/error.log`
-- `sudo bash -c 'echo "==== ACCESS LOG ====" > nginx-logs.txt'`
-- `sudo bash -c 'tail -n 200 /var/log/nginx/access.log >> nginx-logs.txt'`
-- `sudo bash -c 'echo -e "\n==== ERROR LOG ====" >> nginx-logs.txt'`
-- `sudo bash -c 'tail -n 200 /var/log/nginx/error.log >> nginx-logs.txt'`
-- `sudo chown $USER:$USER nginx-logs.txt`
 
-### Download to Local
-- `scp -i your-key.pem ubuntu@<IP>:~/nginx-logs.txt .` (AWS)  
-  or `scp root@<IP>:~/nginx-logs.txt .` (Utho)
 
 ## Challenges Faced
 - Example: Nginx page not opening because port 80 was not allowed in Security Group.
