@@ -20,6 +20,7 @@ A record IP: 142.250.206.142
 
 TTL: 10
 
+dig +noall +answer google.com
 ---
 
 ## Task 2 – IP Addressing
